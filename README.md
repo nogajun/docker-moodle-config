@@ -30,9 +30,9 @@ moodleは、docker composeを使って起動するので、`docker-compose.yml`�
     * dbを保存するボリュームに実ディレクトリを指定
 
 `environment`の変数については次のリンクを参照。
-    
-* bitnami/mariadb - Docker Image | Docker Hub: https://hub.docker.com/r/bitnami/mariadb
-* bitnami/moodle - Docker Image | Docker Hub: https://hub.docker.com/r/bitnami/moodle
+
+* containers/README.md at main · bitnami/containers · GitHub: https://github.com/bitnami/containers/blob/main/bitnami/mariadb/README.md#configuration
+* containers/README.md at main · bitnami/containers · GitHub: https://github.com/bitnami/containers/blob/main/bitnami/moodle/README.md#configuration
 
 ### データを保存するディレクトリを作成
 
@@ -50,6 +50,15 @@ $ sudo chmod 775 mariadb/ moodle/ moodledata/
 ## moodleを起動する
 
 起動については、ほかのdocker composeと同じで、`docker compose up -d`で起動します。
+
+## moodleにログインする
+
+起動したあと、何でログインできるか探しまくる人がいると思うので初期ユーザー名とパスワードを書いておきます。
+
+* ユーザー名: `user`
+* パスワード: `bitnami`
+
+上のデフォルト設定以外にしたい場合は、bitnamiドキュメントの[サイト設定](https://github.com/bitnami/containers/blob/main/bitnami/moodle/README.md#user-and-site-configuration)にも書いていますが、`MOODLE_USERNAME`と`MOODLE_PASSWORD`をそれぞれ設定してください。
 
 ## LICENSE
 
